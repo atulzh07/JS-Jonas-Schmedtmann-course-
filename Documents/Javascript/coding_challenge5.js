@@ -1,10 +1,10 @@
-var john_tip = [];
-var john_final = [];
-var tip;
-var john = {
+let john = {
     bill : [124, 48, 268, 180, 50]
 }
-for (var i=0; i < john.bill.length - 1; i++) {
+let john_tip = [];
+let john_final = [];
+let tip;
+for (let i=0; i < john.bill.length - 1; i++) {
     if (john.bill[i] <= 50){
         tip = 0.2 * john.bill[i]; 
     } else if (john.bill[i] > 50 && john.bill[i] <= 200) {
@@ -13,25 +13,26 @@ for (var i=0; i < john.bill.length - 1; i++) {
         tip = 0.1 * john.bill[i];
     }
     john_tip.push(tip);
-    var john_pay = john.bill[i] + tip;
+    let john_pay = john.bill[i] + tip;
     john_final.push(john_pay);
 }
 console.log(john_tip);
 console.log(john_final);
-var total_tip_john = 0;
+let total_tip_john = 0;
 for (i=0; i < john.bill.length; i++){
     total_tip_john += john.bill[i];
 }
 console.log(total_tip_john);
-var john_average_tip = total_tip_john / john_tip.length;
+let john_average_tip = total_tip_john / john_tip.length;
 console.log(john_average_tip);
+
 var mark = {
     bill : [77, 375, 110, 45]
 }
-var mark_pay;
-var tip_mark = [];
-var mark_final = [];
-var mark_bill;
+let mark_pay;
+let tip_mark = [];
+let mark_final = [];
+let mark_bill;
 function mark_tip(mark_bill) {
     if (mark_bill <= 100){
         return 0.2 * mark_bill;
@@ -48,12 +49,12 @@ for (i=0; i< mark.bill.length; i++){
 }
 console.log(tip_mark);
 console.log(mark_final);
-var total_tip_mark = 0;
+let total_tip_mark = 0;
 for (i=0; i < mark.bill.length; i++){
     total_tip_mark += mark.bill[i];
 }
 console.log(total_tip_mark);
-var mark_average_tip = total_tip_mark / tip_mark.length;
+let mark_average_tip = total_tip_mark / tip_mark.length;
 console.log(mark_average_tip);
 if (john_average_tip > mark_average_tip) {
     console.log('John\'s family has paid the highest tip');
